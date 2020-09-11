@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+	/* Fixed sidenav, full height */
+	.sidenav {
+	  height: 100%;
+	  width: 200px;
+	  z-index: 1;
+	  top: 0;
+	  left: 0;
+	  background-color: white;
+	  overflow-x: hidden;
+	  margin-left: -15px;
+	  margin-right: -15px;
+	}
+	
+	/* Style the sidenav links and the dropdown button */
+	.sidenav a, .dropdown-btn {
+	  padding: 10px 16px 10px 16px;
+	  text-decoration: none;
+	  font-size: 13px;
+	  font-weight: bold;
+	  color: #595959;
+	  display: block;
+	  border: 1px solid #e3e3e3;
+	  background: none;
+	  width: 85%;
+	  text-align: left;
+	  cursor: pointer;
+	  outline: none;
+	}
+	
+	.dropdown-container a {
+	  font-weight: normal;
+	}
+	
+	/* On mouse-over */
+	.sidenav a:hover, .dropdown-btn:hover {
+	  color: #818181;
+	}
+	
+	/* Optional: Style the caret down icon */
+	.fa-caret-down {
+	  float: right;
+	  padding-right: 15px;
+	  padding-top: 5px;
+	}
+    
+    /* 로그인 버튼 css */
+    .btn-outline {
+    	color: #ffffff;
+    	background-color: #40484f;
+    	font-size: 13px;
+    	}
+    
+    .btn-outline:hover {
+    	color: #ffffff;
+    }
+    
+    /* 상단바 */
+    .top-bar {
+    	margin-left: -15px;
+    	margin-right: -15px;
+    }
+    
+    /* .container .row */
+    .row-big {
+    	padding-top:20px;
+		border: 1px solid #b0b0b0;
+		background-color: #ffffff;
+    }
+    
+    /* Main footer */
+    .footer {
+    	font-size: 11px;
+    	padding-top:40px;
+    	padding-bottom:40px;
+    }
+    
+    /* Main TOP10 */
+    .main-title {
+    	margin-top: 30px;
+    }
+    
+    .main-top10 {
+    	margin-top: 10px;
+    	margin-bottom: 300px;
+    	/* border: 1px solid black; */
+    }
+    
+    .main-top10-prd {
+    	padding-top: 50px;
+    	padding-bottom: 50px;
+    	border: 1px solid black;
+    }

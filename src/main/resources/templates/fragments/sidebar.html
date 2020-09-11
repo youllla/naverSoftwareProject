@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta content="text/html; charset=utf-8" />
+
+	<div th:fragment="sidebarFragment">
+		<!--main sidebar-->
+		<div class="sidenav">
+		  <a href="#about"><i class="fa fa-star"></i> 다운로드 TOP10</a>
+		  <button class="dropdown-btn">
+		    <i class="fa fa-list-ul"></i> 카테고리
+		    <i class="fa fa-caret-down"></i>
+		  </button>
+		  <div class="dropdown-container">
+		    <a href="#">&nbsp;&nbsp; 전체</a>
+		    <a href="#">&nbsp;&nbsp; 메신저</a>
+		    <a href="#">&nbsp;&nbsp; 동영상</a>
+		    <a href="#">&nbsp;&nbsp; 문서/사무</a>
+		  </div>
+		  <a href="#contact"><i class="fa fa-pie-chart"></i> 통계</a>
+		</div>
+	</div>
+</html>

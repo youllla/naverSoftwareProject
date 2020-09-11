@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec=""
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      			layout:decorator="layout/default">
+	
+	<!-- 고유 css 추가 -->
+	<th:block layout:fragment="css">
+		<link rel="stylesheet" type="text/css" th:href="@{/lib/css/main.css}">
+	</th:block> 
+	
+	<!-- script 추가 -->
+	<th:block layout:fragment="script">
+		<script th:src="@{/lib/js/main.js}"></script>
+	</th:block>
+	
+	
+	<div layout:fragment="content">
+		<div class="limiter">
+			<div class="container-login100">
+				<div class="wrap-login100">
+					<h1>로그인 성공</h1>
+				    <hr>
+				    <p>
+				        <span sec:authentication="email"></span>님 환영합니다~
+				        <span sec:authentication="principal.authorities"></span>dddddd
+				    </p>
+				    <a th:href="@{/main}">메인으로 이동</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      			layout:decorator="layout/default">
+	
+	<!-- 고유 css 추가 -->
+	<th:block layout:fragment="css">
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+	</th:block> 
+	
+	<!-- 고유 script 추가 -->
+	<th:block layout:fragment="script">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" th:src="@{/js/register.js}"></script>
+	</th:block>
+	
+	
+	<div layout:fragment="content">
+		<article class="card-body mx-auto m-t-30 m-b-50" style="max-width: 400px;">
+			<h4 class="card-title mt-3 text-center">회원가입</h4>
+			
+			<form th:action="@{/register}" method="post" name="registerForm">
+				<div class="form-group input-group">
+					<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+					 </div>
+			        <input name="name" id="name" class="form-control" placeholder="Name" type="text">
+			    </div>
+			    <div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+					 </div>
+			        <input name="email" id="email" class="form-control" placeholder="Email" type="email">
+			    </div>
+			    <div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+					</div>
+			        <input name="password" id="password" class="form-control" placeholder="Password" type="password">
+			    </div>
+			    <div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+					</div>
+			        <input name="password2" id="password2" class="form-control" placeholder="Repeat password" type="password">
+			    </div>
+					<div class="fs-12" id="alert-success" style="color:green;">비밀번호가 일치합니다.</div>
+					<div class="fs-12" id="alert-danger" style="color:red;">비밀번호가 일치하지 않습니다.</div>
+			    <div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+					</div>
+			    	<input name="tel" id="tel" class="form-control" placeholder="Tel" type="text">
+			    </div>
+		    
+			    <!-- 나중에 주소 API 사용 예정 -->
+			    <div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fa fa-home"></i> </span>
+						<select name="address" id="address" onchange="addressVal()" class="custom-select fs-13" style="max-width: 120px;">
+						    <option>선택</option>
+						    <option value="서울">서울</option>
+							<option value="부산">부산</option>
+							<option value="대구">대구</option>
+							<option value="인천">인천</option>
+							<option value="광주">광주</option>
+							<option value="대전">대전</option>
+							<option value="울산">울산</option>
+							<option value="경기">경기</option>
+							<option value="강원">강원</option>
+							<option value="충북">충북</option>
+							<option value="충남">충남</option>
+							<option value="전북">전북</option>
+							<option value="전남">전남</option>
+							<option value="경북">경북</option>
+							<option value="경남">경남</option>
+							<option value="제주">제주</option>
+						</select>
+					</div>
+						<input name="address2" id="address2" class="form-control" placeholder="Address" type="text">
+				</div>
+				<div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fas fa-transgender-alt"></i> </span>
+					</div>
+					<div class="form-control">
+						<div class="form-check-inline">
+						  <label class="form-check-label fs-12">
+						    <input type="radio" class="form-check-input" name="gender" value="M">남
+						  </label>
+						</div>
+						<div class="form-check-inline">
+						  <label class="form-check-label fs-12">
+						    <input type="radio" class="form-check-input" name="gender" value="F">여
+						  </label>
+						</div>
+					</div>
+				</div>
+			    <div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fas fa-heart"></i> </span>
+					</div>
+					<div class="form-control">
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" name="interest" id="messenger" value="messenger">
+						  <label class="form-check-label fs-12" for="messenger">메신저</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" name="interest" id="video" value="video">
+						  <label class="form-check-label fs-12" for="video">동영상</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" name="interest" id="document" value="document">
+						  <label class="form-check-label fs-12" for="document">문서/사무</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" name="interest" id="game" value="game">
+						  <label class="form-check-label fs-12" for="game">게임</label>
+						</div>
+						<div class="fs-12 m-t-10" style="color: grey">
+							관심분야를 선택해주세요.(다중 선택 가능)
+						</div>
+					</div>
+				</div>
+			    <div class="form-group m-t-35">
+			        <button type="submit" class="btn btn-success btn-block" id="reg">회원가입 </button>
+			    </div>
+			</form>
+		</article>
+	</div>
+</html>

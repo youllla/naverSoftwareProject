@@ -1,0 +1,41 @@
+<html>
+<head>
+<title></title>">www.webmadang.net</title>
+<script language="javascript">
+<!--
+function getSelectValue(frm)
+{
+ frm.textValue.value = frm.selectBox.options[frm.selectBox.selectedIndex].text;
+ frm.optionValue.value = frm.selectBox.options[frm.selectBox.selectedIndex].value;
+}
+//-->
+</script>
+</head>
+<body>
+<form name="registerForm">
+		<select name="selectBox" onChange="getSelectValue(this.form);">
+			<option>선택</option>
+			<option value="1">서울</option>
+			<option value="2">부산</option>
+			<option value="3">대구</option>
+			<option value="4">인천</option>
+			<option value="5">광주</option>
+			<option value="6">대전</option>
+			<option value="7">울산</option>
+			<option value="8">경기</option>
+			<option value="9">강원</option>
+			<option value="10">충북</option>
+			<option value="11">충남</option>
+			<option value="12">전북</option>
+			<option value="13">전남</option>
+			<option value="14">경북</option>
+			<option value="15">경남</option>
+			<option value="16">제주</option>
+		</select><br> <br> 텍스트값:
+<input type="text" name="textValue">&nbsp;&nbsp;옵션값:
+<input type="text" name="optionValue">
+</form>
+
+
+</body>
+</html>

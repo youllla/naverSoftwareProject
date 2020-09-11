@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      			layout:decorator="layout/default">
+	
+	<!-- 고유 css 추가 -->
+	<th:block layout:fragment="css">
+	</th:block> 
+	
+	<!-- 고유 script 추가 -->
+	<th:block layout:fragment="script">
+	</th:block>
+	
+	
+	<div layout:fragment="content">
+		<article class="card-body mx-auto m-t-30 m-b-50" style="max-width: 400px;">
+			<h4 class="card-title mt-3 text-center">업로드</h4>
+			<form action="/upload" method="post" enctype="multipart/form-data">
+				<input type="file" value="파일 선택" name="file"/>
+				<input type="submit" value="업로드"/>
+			</form>
+		</article>
+	</div>
+</html>

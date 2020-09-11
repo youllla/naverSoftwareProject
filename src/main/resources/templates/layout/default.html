@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" >
+<head>
+<meta content="text/html; charset=utf-8" />
+<title>Insert title here</title>
+
+	<th:block th:replace="fragments/config :: configFragment"></th:block>
+</head>
+
+<body>
+	<div style="background-color: #f7f6f2;">
+		<div class="container text-center">
+			<th:block th:replace="fragments/header :: headerFragment"></th:block>
+			
+			<div class="row row-big">
+				<div class="col-md-2">
+					<th:block th:replace="fragments/sidebar :: sidebarFragment"></th:block>
+				</div>
+				<div class="col-md-10" style="border: 1px solid #e3e3e3;">
+					<th:block layout:fragment="content"></th:block>
+				</div>
+			</div>
+			
+			<th:block th:replace="fragments/footer :: footerFragment"></th:block>
+		</div>
+	</div>
+	
+	<!-- sidebar js -->
+	<script>
+	var dropdown = document.getElementsByClassName("dropdown-btn");
+	var i;
+	
+	for (i = 0; i < dropdown.length; i++) {
+	  dropdown[i].addEventListener("click", function() {
+		  this.classList.toggle("active");
+		  var dropdownContent = this.nextElementSibling;
+		  if (dropdownContent.style.display === "none") {
+		  dropdownContent.style.display = "block";
+		  } else {
+		  dropdownContent.style.display = "none";
+		  }
+	  });
+	}
+	</script>
+</body>
+</html>
